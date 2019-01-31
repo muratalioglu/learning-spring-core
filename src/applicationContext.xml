@@ -23,7 +23,7 @@
 
     <bean id="PCFactory"
           class="com.muratalioglu.springpractice.PCFactory">
-        <constructor-arg ref="PCSparePartService"/>
+        <property name="sparePartService" ref="PCSparePartService"/>
     </bean>
 
 </beans>
