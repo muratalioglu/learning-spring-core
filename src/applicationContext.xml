@@ -7,7 +7,8 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-	
+	<context:property-placeholder location="classpath:customerservice.properties"/>
+
     <bean id="carSparePartService"
           class="com.muratalioglu.springpractice.ProfileService">
     </bean>
@@ -24,6 +25,9 @@
     <bean id="PCFactory"
           class="com.muratalioglu.springpractice.PCFactory">
         <property name="sparePartService" ref="PCSparePartService"/>
+
+        <property name="contactName" value="${representative.name}"/>
+        <property name="contactEmail" value="${representative.email}"/>
     </bean>
 
 </beans>

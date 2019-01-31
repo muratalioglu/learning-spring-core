@@ -14,6 +14,8 @@ public class Application {
 
         Factory PCFactory = context.getBean("PCFactory", PCFactory.class);
         System.out.println(PCFactory.produce());
+        System.out.println(((PCFactory) PCFactory).getContactName());
+        System.out.println(((PCFactory) PCFactory).getContactEmail());
 
     }
 }
