@@ -9,13 +9,15 @@ public class Application {
 
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(xmlConfig);
 
-        Factory carFactory = context.getBean("carFactory", CarFactory.class);
+        CarFactory carFactory = context.getBean("carFactory", CarFactory.class);
         System.out.println(carFactory.produce());
+        System.out.println(carFactory.getShuttleService().run());
 
-        Factory PCFactory = context.getBean("PCFactory", PCFactory.class);
-        System.out.println(PCFactory.produce());
-        System.out.println(((PCFactory) PCFactory).getContactName());
-        System.out.println(((PCFactory) PCFactory).getContactEmail());
+        Factory pcFactory = context.getBean("PCFactory", PCFactory.class);
+        System.out.println(pcFactory.produce());
+        System.out.println(((PCFactory) pcFactory).getContactName());
+        System.out.println(((PCFactory) pcFactory).getContactEmail());
 
+        context.close();
     }
 }

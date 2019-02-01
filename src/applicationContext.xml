@@ -17,14 +17,24 @@
           class="com.muratalioglu.springpractice.PowerAdapterService">
     </bean>
 
+    <bean id="shuttleService"
+          class="com.muratalioglu.springpractice.ShuttleService"
+          scope="prototype"
+          init-method="initService"
+          destroy-method="destroyService">
+        <!-- destroy-method not works for prototype scoped beans -->
+    </bean>
+
     <bean id="carFactory"
           class="com.muratalioglu.springpractice.CarFactory">
         <constructor-arg ref="carSparePartService"/>
+        <constructor-arg ref="shuttleService"/>
     </bean>
 
     <bean id="PCFactory"
           class="com.muratalioglu.springpractice.PCFactory">
         <property name="sparePartService" ref="PCSparePartService"/>
+        <property name="shuttleService" ref="shuttleService"/>
 
         <property name="contactName" value="${representative.name}"/>
         <property name="contactEmail" value="${representative.email}"/>

@@ -4,6 +4,7 @@ public class PCFactory implements Factory {
 
     // Dependencies.
     private SparePartService sparePartService; // Setter injection.
+    private ShuttleService shuttleService; // Setter injection.
     private String contactName; // Setter injection from properties file.
     private String contactEmail; // Setter injection from properties file.
 
@@ -25,6 +26,10 @@ public class PCFactory implements Factory {
 
     public void setSparePartService(SparePartService sparePartService) {
         this.sparePartService = sparePartService;
+    }
+
+    public void setShuttleService(ShuttleService shuttleService) {
+        this.shuttleService = shuttleService;
     }
 
     @Override
