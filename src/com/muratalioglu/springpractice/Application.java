@@ -13,10 +13,13 @@ public class Application {
         System.out.println(carFactory.produce());
         System.out.println(carFactory.getShuttleService().run());
 
-        Factory pcFactory = context.getBean("PCFactory", PCFactory.class);
+        Factory pcFactory = context.getBean("PCFactory", Factory.class);
         System.out.println(pcFactory.produce());
         System.out.println(((PCFactory) pcFactory).getContactName());
         System.out.println(((PCFactory) pcFactory).getContactEmail());
+
+        Factory chocolateFactory = context.getBean("chocolateFactory", ChocolateFactory.class);
+        System.out.println(chocolateFactory.produce());
 
         context.close();
     }
