@@ -20,7 +20,6 @@
 
     <bean id="shuttleService"
           class="com.muratalioglu.springpractice.ShuttleService"
-          scope="prototype"
           init-method="initService"
           destroy-method="destroyService">
         <!-- destroy-method not works for prototype scoped beans -->
