@@ -17,7 +17,7 @@ public class ShuttleService {
 
     @PostConstruct
     private void readShuttleHourseFromFile() {
-        try (BufferedReader reader = new BufferedReader(new FileReader(new File("shuttlehours.txt")))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(new File("src" + File.separator + "shuttlehours.txt")))) {
             String hour = null;
             while ((hour = reader.readLine()) != null) {
                 shuttleHours.add(hour);
