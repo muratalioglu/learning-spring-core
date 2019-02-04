@@ -1,5 +1,6 @@
 package com.muratalioglu.springpractice;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Application {
@@ -7,7 +8,8 @@ public class Application {
 
         final String xmlConfig = "applicationContext.xml";
 
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(xmlConfig);
+        // ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(xmlConfig);
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext("com.muratalioglu.springpractice");
 
         CarFactory carFactory = context.getBean("carFactory", CarFactory.class);
         System.out.println(carFactory.produce());
